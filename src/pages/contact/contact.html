@@ -1,0 +1,40 @@
+<ion-header>
+<ion-navbar>
+<ion-title>
+Bus Route
+</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content onload="ngOnInit()" padding >
+<form (ngsubmit)="search(source, destination)">
+
+<ion-label class="item item-select" name="source">
+<span class="input-label">Source</span></ion-label>
+<select style="width: 300px; height: 47px;" [(ngModel)]="source" [ngModelOptions]="{standalone: true}"  >
+<option *ngFor="let route of routes " [ngValue]="c">{{route.source}}</option>
+</select>
+
+
+<div class="spacer" style="width: 300px; height: 47px;"></div>
+
+<ion-label class="item item-select" name="destination">
+<span class="input-label">Destination</span></ion-label>
+<select style="width: 300px; height: 47px;" [(ngModel)]="destination" [ngModelOptions]="{standalone: true}">
+<option *ngFor="let c of countries " [ngValue]="c">{{xx}}</option>
+
+</select>
+
+
+<div class="spacer" style="width: 300px; height: 47px;"></div>
+<button class="button button-positive"ion-button block type ="submit">Submit</button>
+</form>
+
+
+ <form (ngSubmit)="routeNumber(source, destination)" #heroForm="ngForm">
+  
+  <input type="text" [(ngModel)]="source" name="source"/>
+  <input type="text" [(ngModel)]="destination" name="destination"/>
+  <button type="submit">Send</button>
+</form>
+</ion-content>

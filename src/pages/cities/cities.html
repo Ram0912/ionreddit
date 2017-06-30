@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Cities</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+    <form (ngSubmit)="cities(city)" #heroForm="ngForm">
+  
+  <input type="text" [(ngModel)]="city" name="source"/>
+ 
+  <button type="submit">Send</button>
+</form>
+   	<ion-item *ngFor="let img of imgurl ">
+			<a href= "{{img.url}}"><img src="{{img.url}}" alt="" width="30%" height="15%"></a>
+		</ion-item>
+</ion-content>
